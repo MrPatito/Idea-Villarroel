@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+}
+
+@media only screen and (min-width: 481px) {
+  .grilla {
+    grid-template-rows: 150px auto auto;
+    grid-template-columns: 120px auto;
+    grid-template-areas:
+      "header header"
+      "nav container"
+      "foot foot";
+
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    background-color: #126e88;
+    span {
+      display: none;
+    }
+
+    nav {
+      grid-area: nav;
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      background-color: #1a434e;
+      position: fixed;
+      height: 100vh;
+      justify-content: space-around;
+      align-items: center;
+
+      .easterEgg {
+        font-family: "Parisienne", cursive;
+        transform: rotate(-90deg);
+        color: #fce1cb;
+      }
+      .navBar {
+        padding: 0%;
+        margin-top: 60px;
+        list-style-type: none;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .navBar {
+        .navItem {
+          list-style-type: none;
+          width: 48px;
+          transition: 1s;
+        }
+        .navItem :hover {
+          transition: scale 1.2;
+        }
+      }
+      #cartButton {
+        width: 64px;
+      }
+    }
+    .contenedor {
+      grid-area: container;
+    }
+  }
+}
