@@ -15,6 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "build-css": "node-sass --include-path scss src/Sass/App.scss src/Css/App.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -34,5 +36,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.13"
   }
 }
