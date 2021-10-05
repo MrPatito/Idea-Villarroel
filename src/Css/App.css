@@ -53,10 +53,28 @@ body {
       gap: 20px; }
       .grilla .contenedor .products {
         background-color: #1a434e;
-        border-radius: 0 0 30px 30px; }
+        border-radius: 0 0 10px 10px; }
         .grilla .contenedor .products img {
           width: 100%;
           height: auto; }
+        .grilla .contenedor .products .name {
+          margin: 0.5rem;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 600;
+          font-size: 13px;
+          color: #ff889b; }
+        .grilla .contenedor .products .actionButtons {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 3rem;
+          padding: 0 0.5rem 0.7rem 0.5rem;
+          justify-content: space-around; }
+          .grilla .contenedor .products .actionButtons button {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            color: #ff889b; }
         .grilla .contenedor .products .one {
           grid-area: one; }
         .grilla .contenedor .products .one {
