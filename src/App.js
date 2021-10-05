@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <div className="grilla">
         <Navbar />
-        <ItemListContainer class="contenedor" greeting="Que onda anaconda" />
+        <ItemListContainer greeting="Que onda anaconda" />
       </div>
     );
   }
