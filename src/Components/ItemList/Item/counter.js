@@ -1,12 +1,28 @@
 import React from "react";
 import { useState } from "react";
+import Item from "./item";
 
 const Counter = ({ onAdd, productNo }) => {
   const [counter, setCounter] = useState(0);
   const [stock, setStock] = useState(7);
-  // const [cart, setCart] = useState({ cant: "" });
+  // const [mounted, setMounted] = useState(false);
+  const [cart, setCart] = useState({ cant: "" });
 
-  // const { cant } = cart;
+  const { cant } = cart;
+  // const deploy = (event)=>{
+  //   setMounted(!mounted);
+  // }
+
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     if (mounted === false) {
+  //       console.log('hidden')
+  //     }
+  //     else{
+  //       console.log('deployed')
+  //     }
+  //   },1000)
+  // }, [mounted])
 
   function decr() {
     if (counter > 0) {
@@ -14,6 +30,7 @@ const Counter = ({ onAdd, productNo }) => {
       setStock(stock + 1);
       console.log(`Number ${productNo} stock: ${stock}`);
       console.log(counter);
+      console.log(cant);
     } else {
       console.log("ahre");
       console.log(`Number ${productNo} stock: ${stock}`);
@@ -35,6 +52,11 @@ const Counter = ({ onAdd, productNo }) => {
     }
   }
 
+  const handleChange = (event) => {
+    let eventValue = parseInt(event.target.value);
+    console.log("valor", eventValue);
+    setCart({ ...cart, [event.target.name]: event.target.value });
+  };
   // function addToCart() {
   //   let totalCart = items.filter(function (item) {
   //     return item.name === productNo;
@@ -45,16 +67,25 @@ const Counter = ({ onAdd, productNo }) => {
 
   return (
     <div className="products" id={productNo}>
-      <div className="image">
+      {/* <div className="image">
         <img src="./Multimedia/Berry-farm.png" alt="" />
       </div>
       <div className="name">
         <h2>{productNo}</h2>
-      </div>
-
+      </div> */}
+      <Item />
       <div id="input" class="input-group mb-3">
-        <input type="text" class="form-control" />
-        <span class="input-group-text">.00</span>
+        <form className="form">
+          <label>
+            <input
+              className="cantidad"
+              name="cant"
+              onChange={handleChange}
+              type="string"
+              value={counter}
+            ></input>
+          </label>
+        </form>
       </div>
 
       <div className="actionButtons">
